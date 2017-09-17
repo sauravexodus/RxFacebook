@@ -1,0 +1,22 @@
+{
+  "name": "RxFacebook",
+  "version": "0.1.0",
+  "summary": "A short description of RxFacebook.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/sauravexodus/RxFacebook",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "sauravexodus": "saurav.chandra1992@live.com"
+  },
+  "source": {
+    "git": "https://github.com/sauravexodus/RxFacebook.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "RxFacebook/Classes/**/*"
+}
