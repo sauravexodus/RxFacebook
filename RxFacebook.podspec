@@ -18,7 +18,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Reactive extensions for Facebook Login and Graph Request Libraries. It helps alot when you are chaining multiple graph requests after a login request.
+Reactive extensions for Facebook Login and Graph Request Libraries. 
+It helps alot when you are chaining multiple graph requests after a login request.
                        DESC
 
   s.homepage         = 'https://github.com/sauravexodus/RxFacebook'
