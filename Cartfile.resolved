@@ -1,4 +1,4 @@
 github "BoltsFramework/Bolts-ObjC" "1.8.4"
 github "ReactiveX/RxSwift" "3.6.1"
-github "facebook/Facebook-SDK-Swift" "0.2.0"
-github "facebook/facebook-ios-sdk" "sdk-version-4.26.0"
+github "facebook/facebook-ios-sdk" "sdk-version-4.21.0"
+github "facebook/facebook-sdk-swift" "db60b9982d7e0917782237e2ce080aeeffbdb355"

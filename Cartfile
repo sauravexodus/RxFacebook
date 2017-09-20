@@ -1,2 +1,3 @@
 github "ReactiveX/RxSwift" ~> 3.0
-github "facebook/Facebook-SDK-Swift"
+github "facebook/facebook-sdk-swift" "master"
+github "facebook/facebook-ios-sdk" "sdk-version-4.21.0"
