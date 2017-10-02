@@ -1,6 +1,0 @@
-framework module RxFacebook {
-  umbrella header "RxFacebook-umbrella.h"
-
-  export *
-  module * { export * }
-}

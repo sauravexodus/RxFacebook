@@ -1,6 +1,0 @@
-framework module Pods_RxFacebook_Example {
-  umbrella header "Pods-RxFacebook_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}
