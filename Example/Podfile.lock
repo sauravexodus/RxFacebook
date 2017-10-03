@@ -19,7 +19,7 @@ PODS:
     - FBSDKCoreKit
   - Nimble (5.1.1)
   - Quick (1.0.0)
-  - RxFacebook (0.1.0):
+  - RxFacebook (0.2.0):
     - FacebookCore (>= 0.2.0)
     - FacebookLogin (>= 0.2.0)
     - RxSwift (>= 3.0)
@@ -42,7 +42,7 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 887be4b7452e1c5a3cc4485ce152529965a0c41e
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
-  RxFacebook: d9e42512d61efaa17cf4b0e009fe282e4e2c6b23
+  RxFacebook: 80c16a3a746694644e089cc1520588a24b786345
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
 
 PODFILE CHECKSUM: 93e13bd6a896e8611115854af9f85ab3f861119d

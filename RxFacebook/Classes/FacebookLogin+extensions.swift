@@ -10,7 +10,7 @@ import FacebookCore
 import FacebookLogin
 
 public extension LoginManager {
-    public func logIn(with readPermissions: [ReadPermission], viewController: UIViewController?) -> Observable<LoginResult> {
+    public func logIn(with readPermissions: [ReadPermission], viewController: UIViewController? = nil) -> Observable<LoginResult> {
         return Observable.create { [weak self] observer in
             guard let strongSelf = self else {
                 observer.onNext(.failed(RxError.unknown))
@@ -19,12 +19,13 @@ public extension LoginManager {
             }
             strongSelf.logIn(readPermissions, viewController: viewController, completion: { loginResult in
                 observer.onNext(loginResult)
+                observer.onCompleted()
             })
             return Disposables.create()
         }
-    }
+    }   
     
-    public func logIn(with publishPermission: [PublishPermission], viewController: UIViewController?) -> Observable<LoginResult> {
+    public func logIn(with publishPermission: [PublishPermission], viewController: UIViewController? = nil) -> Observable<LoginResult> {
         return Observable.create { [weak self] observer in
             guard let strongSelf = self else {
                 observer.onNext(.failed(RxError.unknown))
@@ -33,6 +34,7 @@ public extension LoginManager {
             }
             strongSelf.logIn(publishPermission, viewController: viewController, completion: { loginResult in
                 observer.onNext(loginResult)
+                observer.onCompleted()
             })
             return Disposables.create()
         }
