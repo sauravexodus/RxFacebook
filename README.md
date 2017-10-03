@@ -1,6 +1,6 @@
 # # RxFacebook
 
-[![CI Status](http://img.shields.io/travis/sauravexodus/RxFacebook.svg?style=flat)](https://travis-ci.org/sauravexodus/RxFacebook)
+[![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)]()
 [![Version](https://img.shields.io/cocoapods/v/RxFacebook.svg?style=flat)](http://cocoapods.org/pods/RxFacebook)
 [![License](https://img.shields.io/cocoapods/l/RxFacebook.svg?style=flat)](http://cocoapods.org/pods/RxFacebook)
 [![Platform](https://img.shields.io/cocoapods/p/RxFacebook.svg?style=flat)](http://cocoapods.org/pods/RxFacebook)
