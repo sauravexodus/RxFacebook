@@ -12,7 +12,7 @@ import FacebookLogin
 import RxSwift
 
 public extension GraphRequest {
-    public func getEmailAndUid() -> Observable<GraphRequestResult<GraphRequest>> {
+    public func getResponse() -> Observable<GraphRequestResult<GraphRequest>> {
         return Observable.create { observer in
             self.start { (response, result) in
                 if response?.statusCode != 200 {
