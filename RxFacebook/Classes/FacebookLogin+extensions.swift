@@ -37,8 +37,12 @@ public extension LoginManager {
                 return Disposables.create()
             }
             strongSelf.logIn(publishPermission, viewController: viewController, completion: { loginResult in
-                observer.onNext(loginResult)
-                observer.onCompleted()
+                if case let .failed(error) = loginResult {
+                    observer.onError(error)
+                } else {
+                    observer.onNext(loginResult)
+                    observer.onCompleted()
+                }
             })
             return Disposables.create()
         }
