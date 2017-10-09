@@ -15,9 +15,8 @@ public extension GraphRequest {
     public func getResponse() -> Observable<GraphRequestResult<GraphRequest>> {
         return Observable.create { observer in
             self.start { (response, result) in
-                if response?.statusCode != 200 {
-                    observer.onError(RxError.timeout)
-                    observer.onCompleted()
+                if case let GraphRequestResult.failed(error) = result {
+                    observer.onError(error)
                     return
                 }
                 observer.onNext(result)
