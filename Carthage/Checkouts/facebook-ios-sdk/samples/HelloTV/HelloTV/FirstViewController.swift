@@ -37,7 +37,7 @@ class FirstViewController: UIViewController {
     NotificationCenter.default.addObserver(
       forName: .FBSDKAccessTokenDidChange,
       object: nil,
-      queue: .main) { (notification) -> Void in
+      queue: .main) { (_) -> Void in
         self.updateContent()
     }
 
@@ -112,4 +112,3 @@ extension FirstViewController: FBSDKDeviceShareViewControllerDelegate {
     print("Device share finished with error?", error)
   }
 }
-
