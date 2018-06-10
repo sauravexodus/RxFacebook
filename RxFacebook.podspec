@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxFacebook'
-  s.version          = '0.2.0'
+  s.version          = '0.4.0'
   s.summary          = 'Reactive extensions for Facebook Login and Graph Request Libraries.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Reactive extensions for Facebook Login and Graph Request Libraries. 
+Reactive extensions for Facebook Login and Graph Request Libraries.
 It helps alot when you are chaining multiple graph requests after a login request.
                        DESC
 
@@ -32,7 +32,7 @@ It helps alot when you are chaining multiple graph requests after a login reques
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'RxFacebook/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'RxFacebook' => ['RxFacebook/Assets/*.png']
   # }
