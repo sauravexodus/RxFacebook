@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     }
     
     func signIn() {
-        loginManager.logIn(with: [.publicProfile]).flatMap { [weak self] (loginResult) -> Observable<EmailResult> in
+        loginManager.rx.logIn(with: [.publicProfile]).flatMap { [weak self] (loginResult) -> Observable<EmailResult> in
                 guard let strongSelf = self else { return .just((nil, "Something went wrong")) }
                 switch loginResult {
                 case .cancelled: return .just((nil, "User cancelled the result"))
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     
     func fetchEmail() -> Observable<EmailResult> {
         let graphRequest  = GraphRequest(graphPath: "/me")
-        return graphRequest.getResponse().map { result in
+        return graphRequest.rx.getResponse().map { result in
             switch result {
             case let .success(response):
                 guard let objectMap = response.dictionaryValue, let email = objectMap["email"] as? String else { return (nil, "Couldn't find email") }

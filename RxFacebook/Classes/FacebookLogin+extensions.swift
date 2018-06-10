@@ -9,15 +9,10 @@ import Foundation
 import FacebookCore
 import FacebookLogin
 
-public extension LoginManager {
+public extension Reactive where Base: LoginManager {
     public func logIn(with readPermissions: [ReadPermission], viewController: UIViewController? = nil) -> Observable<LoginResult> {
-        return Observable.create { [weak self] observer in
-            guard let strongSelf = self else {
-                observer.onError(RxError.unknown)
-                observer.onCompleted()
-                return Disposables.create()
-            }
-            strongSelf.logIn(readPermissions, viewController: viewController, completion: { loginResult in
+        return Observable.create {  observer in
+            self.base.logIn(readPermissions: readPermissions, viewController: viewController, completion: { (loginResult) in
                 if case let .failed(error) = loginResult {
                     observer.onError(error)
                 } else {
@@ -27,16 +22,11 @@ public extension LoginManager {
             })
             return Disposables.create()
         }
-    }   
+    }
     
-    public func logIn(with publishPermission: [PublishPermission], viewController: UIViewController? = nil) -> Observable<LoginResult> {
-        return Observable.create { [weak self] observer in
-            guard let strongSelf = self else {
-                observer.onError(RxError.unknown)
-                observer.onCompleted()
-                return Disposables.create()
-            }
-            strongSelf.logIn(publishPermission, viewController: viewController, completion: { loginResult in
+    public func logIn(with publishPermissions: [PublishPermission], viewController: UIViewController? = nil) -> Observable<LoginResult> {
+        return Observable.create { observer in
+            self.base.logIn(publishPermissions: publishPermissions, viewController: viewController, completion: { loginResult in
                 if case let .failed(error) = loginResult {
                     observer.onError(error)
                 } else {
@@ -48,3 +38,5 @@ public extension LoginManager {
         }
     }
 }
+
+extension LoginManager: ReactiveCompatible {}

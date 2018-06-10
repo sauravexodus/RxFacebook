@@ -11,18 +11,22 @@ import FacebookCore
 import FacebookLogin
 import RxSwift
 
-public extension GraphRequest {
+public extension Reactive where Base: GraphRequestProtocol {
     public func getResponse() -> Observable<GraphRequestResult<GraphRequest>> {
         return Observable.create { observer in
-            self.start { (response, result) in
+            self.base.start { (response, result) in
                 if case let GraphRequestResult.failed(error) = result {
                     observer.onError(error)
                     return
+                } else if let `result` = result as? GraphRequestResult<GraphRequest> {
+                    observer.onNext(result)
+                    observer.onCompleted()
                 }
-                observer.onNext(result)
                 observer.onCompleted()
             }
             return Disposables.create()
         }
     }
 }
+
+extension GraphRequest: ReactiveCompatible {}
